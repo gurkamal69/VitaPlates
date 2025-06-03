@@ -1,0 +1,193 @@
+.HSHeroSection {
+  width: 100%;
+  padding: 100px 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.HSFadeIn {
+  opacity: 1;
+}
+
+.HSFadeOut {
+  opacity: 0;
+}
+
+.HSContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.HSLeft {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 20px;
+}
+
+.HSTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  line-height: 1.2;
+}
+
+.HSHighlight {
+  color: var(--button-color);
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+}
+
+.HSDescription {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 500px;
+}
+
+.HSButton {
+  background: linear-gradient(to right, #f12711, #f5af19);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.HSButton:hover {
+  transform: scale(1.05);
+}
+
+.HSSubscribers {
+  margin-top: 25px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.HSAvatarGroup {
+  display: flex;
+  margin-top: 10px;
+}
+
+.HSAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: -10px;
+  border: 2px solid white;
+}
+
+.HSRight {
+  flex: 1;
+  min-height: 400px;
+  min-width: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .HSHeroSection {
+    padding: 60px 40px;
+  }
+
+  .HSTitle {
+    font-size: 2.5rem;
+  }
+
+  .HSHighlight {
+    font-size: 2.5rem;
+  }
+
+  .HSDescription {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .HSRight {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .HSContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .HSLeft {
+    padding-right: 0;
+    margin-bottom: 20px;
+    min-width: 100%;
+  }
+
+  .HSRight {
+    width: 100%;
+    min-width: 100%;
+    min-height: 250px;
+  }
+
+  .HSTitle {
+    font-size: 2rem;
+  }
+
+  .HSHighlight {
+    font-size: 2rem;
+  }
+
+  .HSButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .HSAvatar {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .HSHeroSection {
+    padding: 40px 20px;
+  }
+
+  .HSTitle {
+    font-size: 1.8rem;
+  }
+
+  .HSHighlight {
+    font-size: 1.8rem;
+  }
+
+  .HSDescription {
+    font-size: 0.9rem;
+  }
+
+  .HSButton {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+
+  .HSSubscribers {
+    font-size: 0.9rem;
+  }
+
+  .HSAvatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .HSRight {
+    min-height: 200px;
+  }
+}

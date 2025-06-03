@@ -1,0 +1,580 @@
+/* General Reset and Base Styles */
+.yoga-download-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f0 100%);
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+/* Header Styles */
+.yoga-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.yoga-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.yoga-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Error Message */
+.yoga-error {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Loading State */
+.yoga-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Pose Grid */
+.yoga-pose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Pose Card */
+.yoga-pose-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.yoga-pose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.yoga-pose-card img {
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #3498db;
+}
+
+.yoga-pose-info {
+  padding: 1.5rem;
+}
+
+.yoga-pose-info h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.yoga-pose-info p {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin: 0.3rem 0;
+}
+
+.yoga-pose-info p strong {
+  color: #34495e;
+}
+
+/* Modal Overlay */
+.yoga-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem; /* Add padding for small screens */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal Content */
+.yoga-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+  box-sizing: border-box;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.yoga-modal-content h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Modal Body */
+.yoga-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+
+/* Image Section with Timer */
+.yoga-modal-image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.yoga-modal-image-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #3498db;
+  max-height: 300px; /* Limit image height for consistency */
+  object-fit: cover;
+}
+
+/* Timer Styles */
+.yoga-timer {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.yoga-timer h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.yoga-timer-display {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3498db;
+  background: #fff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  margin: 0 auto 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.yoga-timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.yoga-timer-controls input {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.yoga-timer-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.yoga-timer-controls button:nth-child(2) {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.yoga-timer-controls button:nth-child(2):hover {
+  background: #27ae60;
+}
+
+.yoga-timer-controls button:nth-child(3) {
+  background: linear-gradient(to right, #f39c12, #e67e22);
+  color: #fff;
+}
+
+.yoga-timer-controls button:nth-child(3):hover {
+  background: #e67e22;
+}
+
+.yoga-timer-controls button:nth-child(4) {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.yoga-timer-controls button:nth-child(4):hover {
+  background: #c0392b;
+}
+
+.yoga-timer-controls button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Modal Details */
+.yoga-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.yoga-modal-details p {
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.yoga-modal-details p strong {
+  color: #2c3e50;
+}
+
+/* Close Button */
+.yoga-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.yoga-modal-close:hover {
+  background: #c0392b;
+}
+
+/* YouTube Frame */
+.yoga-youtube-frame {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f9f9f9;
+  padding: 1rem;
+}
+
+.yoga-youtube-frame iframe {
+  border-radius: 8px;
+  width: 100%;
+  height: 315px; /* Default height */
+}
+
+/* Loading Spinner */
+.yoga-loading-spinner {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #3498db;
+  animation: pulse 1.5s infinite;
+}
+
+.yoga-pose-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Favorite button */
+.yoga-favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.yoga-favorite-button svg {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.yoga-favorite-button svg.favorited {
+  color: #ff4d4f;
+  fill: #ff4d4f;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .yoga-pose-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .yoga-modal-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .yoga-modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .yoga-youtube-frame iframe {
+    height: 250px; /* Adjust iframe height for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .yoga-download-page {
+    padding: 1.5rem;
+  }
+
+  .yoga-header h1 {
+    font-size: 2rem;
+  }
+
+  .yoga-header p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .yoga-pose-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .yoga-pose-card {
+    border-radius: 12px;
+  }
+
+  .yoga-pose-info {
+    padding: 1rem;
+  }
+
+  .yoga-pose-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .yoga-pose-info p {
+    font-size: 0.9rem;
+  }
+
+  .yoga-modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .yoga-modal-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .yoga-modal-image-section img {
+    max-height: 250px;
+  }
+
+  .yoga-timer-display {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 1.5rem;
+  }
+
+  .yoga-youtube-frame iframe {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yoga-download-page {
+    padding: 1rem;
+  }
+
+  .yoga-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .yoga-header p {
+    font-size: 0.9rem;
+  }
+
+  .yoga-pose-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 0.75rem;
+  }
+
+  .yoga-pose-card img {
+    height: 150px;
+  }
+
+  .yoga-pose-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .yoga-pose-info p {
+    font-size: 0.85rem;
+  }
+
+  .yoga-modal-content {
+    padding: 1rem;
+    width: 98%;
+    max-height: 95vh;
+  }
+
+  .yoga-modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .yoga-modal-image-section img {
+    max-height: 200px;
+  }
+
+  .yoga-timer {
+    padding: 0.75rem;
+  }
+
+  .yoga-timer h3 {
+    font-size: 1rem;
+  }
+
+  .yoga-timer-display {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 1.2rem;
+  }
+
+  .yoga-timer-controls {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .yoga-timer-controls input,
+  .yoga-timer-controls button {
+    width: 100%;
+    max-width: 180px;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .yoga-youtube-frame {
+    padding: 0.5rem;
+  }
+
+  .yoga-youtube-frame iframe {
+    height: 180px;
+  }
+
+  .yoga-modal-details p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .yoga-pose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yoga-pose-card {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .yoga-modal-content {
+    padding: 0.75rem;
+  }
+
+  .yoga-modal-close {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .yoga-youtube-frame iframe {
+    height: 160px;
+  }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 2dppx) {
+  .yoga-pose-card img,
+  .yoga-modal-image-section img {
+    image-rendering: optimizeQuality; /* Improve image quality on high-DPI screens */
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+  .yoga-modal-content {
+    max-height: 80vh; /* Adjust for landscape mode */
+  }
+
+  .yoga-youtube-frame iframe {
+    height: 150px; /* Smaller iframe height in landscape */
+  }
+
+  .yoga-modal-image-section img {
+    max-height: 200px;
+  }
+}
+
+/* Accessibility: Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .yoga-pose-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .yoga-loading-spinner {
+    animation: none;
+  }
+}
