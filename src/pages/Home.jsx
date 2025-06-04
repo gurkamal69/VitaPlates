@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-import anythingIcon from "../Images/anything.svg";
+import anythingIcon from "../Images/Anything.svg";
 import ketoIcon from '../Images/keto.svg';
 import aegeanIcon from '../Images/aegean.svg';
 import paleoIcon from '../Images/paleo.svg';
