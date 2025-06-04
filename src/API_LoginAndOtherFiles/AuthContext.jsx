@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from "./Firebase"; // relative to same folder
+import { auth } from './Firebase.jsx'; // ✅ Correct named import
 
 export const AuthContext = createContext();
 
