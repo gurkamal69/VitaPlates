@@ -1,5 +1,5 @@
 {
-  "homepage": "https://gurkamal69.github.io/VitaPlates",
+  "homepage": "https://gurkamal69.github.io/VitaPlatess",
   "name": "vitaplates",
   "version": "0.1.0",
   "private": true,
@@ -30,19 +30,13 @@
     "styled-components": "^6.1.17",
     "web-vitals": "^2.1.4"
   },
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "start": "vite"
-},
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
   },
   "browserslist": {
     "production": [
