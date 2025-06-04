@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../API,LoginAndOtherFiles/AuthContext';
+import { AuthContext } from '../API_LoginAndOtherFiles/AuthContext';
 import MealTable from '../components/MealTable';
 import MealSearchModal from '../components/MealSearchModal';
 import MealDetailsModal from '../components/MealDetailsModal';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../API,LoginAndOtherFiles/AuthContext';
+import { AuthContext } from '../API_LoginAndOtherFiles/AuthContext';
 import CustomizeTableModal from '../components/CustomizeTableModal';
 import axios from 'axios';
 import '../styles/PrePlannedMeals.css';
