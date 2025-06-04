@@ -5,7 +5,7 @@ export default defineConfig({
   base: "/vitaplates/",
   plugins: [react()],
   build: {
-    outDir: 'dish'  // Add this line to output build to 'dish'
+    outDir: 'dish'  // Output build to 'dish'
   },
   server: {
     proxy: {

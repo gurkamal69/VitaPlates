@@ -1,6 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
+<<<<<<< HEAD
 import { auth } from './firebase'; // ✅ Correct named import
+=======
+import { auth } from './Firebase.jsx'; // ✅ Correct named import
+>>>>>>> ee111cfa5759fe95e297e991de19a6d83f4ec4c4
 
 export const AuthContext = createContext();
 
