@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import anythingIcon from "../Images/Anything.svg";
 import ketoIcon from '../Images/Keto.svg';
-import aegeanIcon from '../Images/aegean.svg';
+import aegeanIcon from '../Images/Aegean.svg';
 import paleoIcon from '../Images/Paleo.svg';
 import veganIcon from '../Images/Vegan.svg';
 import vegetarianIcon from '../Images/Vegetarian.svg';
