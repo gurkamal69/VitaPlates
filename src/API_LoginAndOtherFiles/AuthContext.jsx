@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from './firebase'; // ✅ Correct named import
+import { auth } from "./firebase"; // relative to same folder
 
 export const AuthContext = createContext();
 
