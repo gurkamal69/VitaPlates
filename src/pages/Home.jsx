@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import anythingIcon from "../Images/Anything.svg";
-import ketoIcon from '../Images/keto.svg';
+import ketoIcon from '../Images/Keto.svg';
 import aegeanIcon from '../Images/aegean.svg';
-import paleoIcon from '../Images/paleo.svg';
-import veganIcon from '../Images/vegan.svg';
-import vegetarianIcon from '../Images/vegetarian.svg';
+import paleoIcon from '../Images/Paleo.svg';
+import veganIcon from '../Images/Vegan.svg';
+import vegetarianIcon from '../Images/Vegetarian.svg';
 import HeroSection from './HeroSection';
 
 const Home = () => {
