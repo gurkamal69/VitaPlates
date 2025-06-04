@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../API,LoginAndOtherFiles/AuthContext';
+import { AuthContext } from '../API_LoginAndOtherFiles/AuthContext';
 import axios from 'axios';
 import MealTable from '../components/MealTable';
 import MealSearchModal from '../components/MealSearchModal';

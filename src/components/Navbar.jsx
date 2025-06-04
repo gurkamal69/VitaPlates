@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import LoginPanel from './LoginPanel';
 import '../styles/Navbar.css';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../API,LoginAndOtherFiles/Firebase';
+import { auth } from '../API_LoginAndOtherFiles/Firebase';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);

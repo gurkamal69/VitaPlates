@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
   signOut
 } from 'firebase/auth';
-import { auth } from '../API,LoginAndOtherFiles/Firebase';
+import { auth } from '../API_LoginAndOtherFiles/Firebase';
 import { FacebookAuthProvider } from 'firebase/auth';
 import { updateProfile } from "firebase/auth";
 
