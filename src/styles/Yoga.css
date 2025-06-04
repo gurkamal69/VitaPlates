@@ -1,0 +1,717 @@
+/* Overlay */
+.YogaOverlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/yogapage.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Badge */
+.YogaBadge {
+  background: linear-gradient(45deg, var(--button-color, #ff6b35), #ff8a7a);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Typography */
+.YogaTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.YogaTitle span {
+  color: var(--button-color, #ff6b35);
+}
+
+.YogaSubtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.YogaSearch-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  overflow: visible;
+  background-color: rgba(0, 0, 0, 0.134);
+  border: 2px solid var(--button-color);
+  position: relative;
+}
+
+.YogaSearch-input {
+  flex: 1;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: transparent;
+  outline: none;
+}
+
+.YogaSearch-input::placeholder {
+  color: rgba(190, 171, 171, 0.7);
+}
+
+.YogaSearch-input:focus {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.348);
+  color: var(--text-color);
+  transition: background .5s ease;
+}
+
+.YogaClear-button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.YogaClear-button:hover, .YogaClear-button:focus {
+  color: #ddd;
+  outline: none;
+}
+
+/* Search Results */
+.YogaSearch-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1200;
+  padding: 15px;
+  color: #333;
+  animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.YogaResults-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.YogaResult-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.YogaResult-item:hover, .YogaResult-item:focus {
+  background: rgba(255, 107, 53, 0.1);
+  outline: 2px solid var(--button-color, #ff6b35);
+  border-radius: 7px;
+  outline-offset: 2px;
+}
+
+.YogaResult-item:last-child {
+  border-bottom: none;
+}
+
+.YogaResult-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.YogaResult-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.YogaResult-info span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.YogaSanskrit {
+  font-style: italic;
+  color: #666;
+  font-size: 12px;
+}
+
+.YogaSearch-message {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+
+.YogaSearch-message.YogaError {
+  color: #f44336;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.YogaRetry-button {
+  background: var(--button-color, #ff6b35);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.YogaRetry-button:hover, .YogaRetry-button:focus {
+  background: #e55a2f;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Modal */
+.YogaModal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1300;
+  animation: fadeSlide 0.3s ease;
+}
+
+.YogaModal-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 900px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.YogaModal-content h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.YogaModal-content .YogaSanskrit {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.YogaModal-body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+
+.YogaModal-image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.YogaModal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid var(--button-color, #ff6b35);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.YogaModal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.YogaModal-details p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.YogaModal-details p strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.YogaModal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.YogaModal-close:hover, .YogaModal-close:focus {
+  background: #d32f2f;
+  outline: none;
+}
+
+/* Timer */
+.YogaTimer {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--button-color, #ff6b35);
+}
+
+.YogaTimer h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.YogaTimer-display {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--button-color, #ff6b35);
+  background: #fff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  margin: 0 auto 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.YogaTimer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.YogaTimer-input {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  background: #fff;
+  color: #333;
+}
+
+.YogaTimer-input:focus {
+  border-color: var(--button-color, #ff6b35);
+  outline: none;
+}
+
+.YogaTimer-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.YogaTimer-btn.YogaStart {
+  background: #4caf50;
+}
+
+.YogaTimer-btn.YogaStart:hover, .YogaTimer-btn.YogaStart:focus {
+  background: #43a047;
+  outline: none;
+}
+
+.YogaTimer-btn.YogaPause {
+  background: linear-gradient(to right, #ff9800, #ff6b35);
+}
+
+.YogaTimer-btn.YogaPause:hover, .YogaTimer-btn.YogaPause:focus {
+  background: #fb8c00;
+  outline: none;
+}
+
+.YogaTimer-btn.YogaReset {
+  background: #f44336;
+}
+
+.YogaTimer-btn.YogaReset:hover, .YogaTimer-btn.YogaReset:focus {
+  background: #e53935;
+  outline: none;
+}
+
+.YogaTimer-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* YouTube Frame */
+.YogaYoutube-frame {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border: 1px solid var(--button-color, #ff6b35);
+}
+
+.YogaYoutube-frame iframe {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.YogaYoutube-frame p {
+  color: #666;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Loading Spinner */
+.YogaLoading-spinner {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--button-color, #ff6b35);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Stats */
+.YogaStats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 40px;
+  border-radius: 16px;
+}
+
+.YogaStat h2 {
+  color: #ff6b35;
+  margin: 0;
+  font-size: 28px;
+}
+
+.YogaStat p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #eee;
+}
+
+/* Icons */
+.YogaIcons-section {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.YogaIcon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+.YogaIcon-card i {
+  font-size: 30px;
+  color: #ff6b35;
+  margin-bottom: 8px;
+}
+
+.YogaAnimated {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.YogaDelay-1 {
+  animation-delay: 0.3s;
+}
+
+.YogaDelay-2 {
+  animation-delay: 0.6s;
+}
+
+.YogaDelay-3 {
+  animation-delay: 0.9s;
+}
+
+/* Testimonial */
+.YogaTestimonial {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 16px;
+  font-style: italic;
+  font-size: 16px;
+  color: #f1f1f1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: fadeSlide 0.5s ease forwards;
+}
+
+.YogaTestimonial span {
+  display: block;
+  margin-top: 12px;
+  color: #ff6b35;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.YogaCustom-hero-container {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  background: #000000;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.YogaCustom-text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.YogaCustom-top-tag {
+  color: #facc15;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.YogaCustom-main-heading {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.YogaCustom-highlight {
+  color: #facc15;
+}
+
+.YogaCustom-brand {
+  color: #94a3b8;
+}
+
+.YogaCustom-description {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 200;
+  color: #cbd5e1;
+}
+
+.YogaCustom-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.YogaCustom-download-btn {
+  padding: 12px 30px;
+  background: #facc15;
+  border: none;
+  border-radius: 30px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.YogaCustom-download-btn:hover, .YogaCustom-download-btn:focus {
+  background: #ffdd44;
+  outline: none;
+}
+
+.YogaCustom-yoga-thumbs {
+  display: flex;
+  gap: 20px;
+}
+
+.YogaCustom-yoga-thumbs img {
+  width: 100px;
+  border-radius: 15px;
+  background: #facc15;
+  padding: 10px;
+}
+
+.YogaCustom-image-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.YogaCustom-main-img {
+  max-width: 80%;
+  border-radius: 20px;
+  background: #facc15;
+  padding: 20px;
+}
+
+.YogaCustom-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  background: #1e293b;
+  color: #facc15;
+  padding: 18px 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(191, 187, 169, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .YogaModal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .YogaModal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .YogaTimer-display {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 1.5rem;
+  }
+
+  .YogaTitle {
+    font-size: 36px;
+  }
+
+  .YogaCustom-hero-container {
+    padding: 30px;
+  }
+
+  .YogaCustom-main-heading {
+    font-size: 36px;
+  }
+
+  .YogaStats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .YogaIcons-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .YogaSearch-bar {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .YogaModal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .YogaTimer-controls {
+    flex-direction: column;
+  }
+
+  .YogaTimer-input,
+  .YogaTimer-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0.25rem auto;
+  }
+
+  .YogaCustom-yoga-thumbs img {
+    width: 80px;
+  }
+
+  .YogaCustom-main-img {
+    max-width: 80%;
+  }
+
+  .YogaSearch-results {
+    max-height: 200px;
+  }
+
+  .YogaSearch-message {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .YogaRetry-button {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}

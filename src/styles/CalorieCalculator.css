@@ -1,0 +1,151 @@
+.wrapper {
+  max-width: 90%; /* Changed from fixed 550px to percentage */
+  width: min(550px, 100%); /* Maintains max-width but allows smaller sizes */
+  margin: 2rem auto;
+  line-height: 1.5;
+  padding: 0.5em 0.5em 2em;
+  border: 5px solid #eeeeeecf;
+  border-radius: 80px;
+}
+
+.wrapper h3 {
+  margin: 1em 0;
+  font-size: clamp(1.2em, 4vw, 1.5em); /* Responsive font size */
+  font-weight: 600;
+  text-align: center;
+}
+
+.calculator {
+  padding: 1em;
+}
+
+/* Gender Selection */
+.choose-gender {
+  display: flex;
+  margin-bottom: 2em;
+  gap: 2px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.segmented-control {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  min-width: 120px; /* Prevent buttons from getting too small */
+}
+
+.segmented-control input[type="radio"] {
+  display: none;
+}
+
+.segmented-control label {
+  display: block;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-size: clamp(0.9em, 2.5vw, 1em); /* Responsive font size */
+}
+
+.segmented-control input[type="radio"]:checked + label {
+  background-color: #ededef;
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+
+.segmented-control:first-child label {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.segmented-control:last-child label {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* Range Inputs */
+.range-container {
+  margin-bottom: 1.5rem;
+}
+
+.range-container label {
+  display: block;
+  font-weight: 500;
+  font-size: clamp(0.9em, 2.5vw, 1em); /* Responsive font size */
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: var(--gradient-healthy-hover);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--button-color);
+  border: 3px solid #fff;
+  margin-top: -9px;
+  box-shadow: 0 0 8px 1px var(--highlight-color);
+  cursor: pointer;
+}
+
+/* Results */
+.results {
+  text-align: center;
+  color: #71737f;
+}
+
+.results-item span {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: clamp(1em, 3vw, 1.2em); /* Responsive font size */
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0.5em;
+    border-radius: 40px; /* Smaller radius for smaller screens */
+  }
+
+  .choose-gender {
+    flex-direction: column; /* Stack gender buttons vertically */
+    gap: 0.5em;
+  }
+
+  .segmented-control:first-child label,
+  .segmented-control:last-child label {
+    border-radius: var(--border-radius); /* Full radius for stacked buttons */
+  }
+}
+
+@media (max-width: 440px) {
+  .results {
+    display: flex;
+    flex-direction: column; /* Stack results vertically */
+    gap: 1em;
+    margin: 1em 0.5em 0;
+  }
+
+  .results-item {
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (min-width: 441px) {
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adaptive columns */
+    gap: 1em;
+    margin: 2em 1em 0;
+  }
+}

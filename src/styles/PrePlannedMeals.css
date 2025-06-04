@@ -1,0 +1,410 @@
+/* Container */
+.PrePlannedcontainer {
+  margin: 0 2rem 3rem 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.PrePlannedheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.PrePlannedtitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.PrePlannedgenerate-btn {
+  margin-left: 1rem;
+}
+
+/* Loading State */
+.PrePlannedloading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem;
+  color: #34495e;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.PrePlannedspinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #f4a261;
+  border-top: 5px solid #e76f51;
+  border-radius: 50%;
+  animation: PrePlannedspin 0.8s ease-in-out infinite;
+}
+
+@keyframes PrePlannedspin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Meals Grid */
+.PrePlannedmeals-grid {
+  overflow-x: auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+/* Table Styling */
+.PrePlannedmeal-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: auto; /* Allow table to adjust column widths based on content */
+}
+
+.PrePlannedtable-header {
+  background: var(--badge-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #ececec;
+  letter-spacing: 0.05em;
+}
+
+.PrePlannedtable-row {
+  transition: background 0.2s ease;
+}
+
+.PrePlannedtable-row:hover {
+  background: #f9f9f9;
+}
+
+.PrePlannedmeal-type {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem;
+  background: var(--badge-color);
+  text-align: center;
+  text-transform: uppercase;
+  min-width: 120px;
+  border: 1px solid #ececec;
+}
+
+.PrePlannedtable-cell {
+  padding: 1rem;
+  vertical-align: middle;
+  border: 1px solid #ececec;
+  min-width: 140px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+/* Meal Card */
+.PrePlannedmeal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.PrePlannedmeal-card:hover {
+  transform: translateY(-3px);
+}
+
+.PrePlannedmeal-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4a261;
+  transition: border-color 0.2s ease;
+}
+
+.PrePlannedmeal-card:hover .PrePlannedmeal-img {
+  border-color: #e76f51;
+}
+
+.PrePlannedview-recipe-link {
+  font-size: 1rem;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.PrePlannedview-recipe-link:hover {
+  color: #e76f51;
+}
+
+/* No Meal Placeholder */
+.PrePlannedno-meal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 120px;
+}
+
+.PrePlannedplaceholder-icon {
+  font-size: 2rem;
+  color: #b0b0b0;
+}
+
+/* Error State */
+.PrePlannederror {
+  text-align: center;
+  padding: 2.5rem;
+  color: #7f1d1d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: #fef2f2;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .PrePlannedcontainer {
+    margin: 0 1.5rem 2.5rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .PrePlannedtitle {
+    font-size: 2.5rem;
+  }
+
+  .PrePlannedheader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .PrePlannedgenerate-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%; /* Full-width buttons on smaller screens */
+    padding: 0.8rem;
+  }
+
+  .PrePlannedtable-header {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .PrePlannedmeal-type {
+    font-size: 1rem;
+    padding: 0.8rem;
+    min-width: 100px;
+  }
+
+  .PrePlannedtable-cell {
+    padding: 0.8rem;
+    min-width: 120px;
+  }
+
+  .PrePlannedmeal-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .PrePlannedview-recipe-link {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .PrePlannedcontainer {
+    margin: 0 1rem 2rem 1rem;
+    padding: 1rem;
+  }
+
+  .PrePlannedtitle {
+    font-size: 2rem;
+  }
+
+  .PrePlannedmeals-grid {
+    padding: 0.5rem;
+  }
+
+  .PrePlannedtable-header {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .PrePlannedmeal-type {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+    min-width: 80px;
+  }
+
+  .PrePlannedtable-cell {
+    padding: 0.6rem;
+    min-width: 100px;
+  }
+
+  .PrePlannedmeal-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .PrePlannedview-recipe-link {
+    font-size: 0.85rem;
+  }
+
+  .PrePlannedno-meal {
+    min-height: 80px;
+  }
+
+  .PrePlannedloading {
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
+
+  .PrePlannederror {
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .PrePlannedcontainer {
+    margin: 0 0.5rem 1.5rem 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .PrePlannedtitle {
+    font-size: 1.8rem;
+  }
+
+  .PrePlannedheader {
+    padding: 0 0.5rem;
+  }
+
+  .PrePlannedgenerate-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .PrePlannedtable-header {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .PrePlannedmeal-type {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    min-width: 60px;
+  }
+
+  .PrePlannedtable-cell {
+    padding: 0.5rem;
+    min-width: 80px;
+  }
+
+  .PrePlannedmeal-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .PrePlannedview-recipe-link {
+    font-size: 0.8rem;
+  }
+
+  .PrePlannedno-meal {
+    min-height: 60px;
+  }
+
+  .PrePlannedplaceholder-icon {
+    font-size: 1.5rem;
+  }
+
+  .PrePlannedloading {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .PrePlannedspinner {
+    width: 36px;
+    height: 36px;
+    border-width: 4px;
+  }
+
+  .PrePlannederror {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .PrePlannedtitle {
+    font-size: 3.2rem;
+  }
+
+  .PrePlannedmeal-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .PrePlannedtable-cell {
+    min-width: 160px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .PrePlannedcontainer {
+    max-width: 1600px;
+  }
+
+  .PrePlannedtitle {
+    font-size: 3.5rem;
+  }
+
+  .PrePlannedtable-header {
+    font-size: 1.2rem;
+  }
+
+  .PrePlannedmeal-type {
+    font-size: 1.2rem;
+  }
+
+  .PrePlannedtable-cell {
+    min-width: 180px;
+  }
+
+  .PrePlannedmeal-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .PrePlannedview-recipe-link {
+    font-size: 1.1rem;
+  }
+}

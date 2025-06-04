@@ -1,0 +1,990 @@
+/* Marquee Section */
+.HSmarquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 20px 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.HSmarquee-wrapper.section-visible {
+  opacity: 1;
+}
+
+.HSmarquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 20s linear infinite;
+  gap: 20px;
+}
+
+.HSmarquee-image {
+  height: 100px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.HSmarquee-image:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hero Section */
+.hero {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero.section-visible {
+  opacity: 1;
+}
+
+.main-img {
+  width: 25rem;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: var(--shadow-dark);
+  transition: transform 0.5s ease;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+.main-img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.overlay-img {
+  position: absolute;
+  border-radius: 15px;
+  opacity: 0.8;
+  box-shadow: var(--shadow-light);
+  transition: opacity 0.3s ease;
+  max-width: 100%;
+}
+
+.overlay-img:hover {
+  opacity: 1;
+}
+
+.hero-text {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: var(--text-color);
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-text .btn {
+  padding: 12px 30px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  animation: fadeInUp 1.4s ease-out;
+}
+
+/* Blog Section */
+.blog-case-studies-container {
+  padding: 40px 20px;
+  background-color: #f5f1e9;
+  text-align: center;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5em);
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.blog-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  position: relative;
+  width: clamp(250px, 90%, 300px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.blog-card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.blog-orange {
+  background: linear-gradient(135deg, #f9a825, #f9a825);
+  opacity: 0.2;
+}
+
+.blog-peach {
+  background: linear-gradient(135deg, #ff9999, #ff9999);
+  opacity: 0.2;
+}
+
+.blog-cyan {
+  background: linear-gradient(135deg, #00c4cc, #00c4cc);
+  opacity: 0.2;
+}
+
+.blog-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.blog-logo {
+  font-size: clamp(1.5em, 4vw, 2em);
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ff9999, #ff9999);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: clamp(1.2em, 3vw, 1.5em);
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.blog-customer-story {
+  font-size: clamp(0.7em, 2vw, 0.8em);
+  color: #666;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: clamp(1em, 2.5vw, 1.2em);
+  margin: 10px 0;
+  color: #333;
+}
+
+.blog-description {
+  font-size: clamp(0.8em, 2vw, 0.9em);
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.blog-read-time {
+  font-size: clamp(0.7em, 2vw, 0.8em);
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.blog-read-more {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(0.8em, 2vw, 0.9em);
+}
+
+.blog-read-more:hover {
+  background-color: #555;
+}
+
+/* Blog Responsive Design */
+@media (max-width: 768px) {
+  .blog-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Meal Section */
+.meal-section {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  padding: clamp(20px, 5vw, 40px) 20px;
+  margin: 40px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  min-height: 400px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.meal-section.section-visible {
+  opacity: 1;
+}
+
+.meal-container {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(250, 250, 250, 0.85);
+  backdrop-filter: blur(10px);
+  padding: clamp(20px, 5vw, 30px);
+  border-radius: 20px;
+  box-shadow: var(--shadow-dark);
+  text-align: center;
+  border: 1px solid rgba(94, 140, 97, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+
+.meal-container:hover {
+  transform: translateY(-5px);
+}
+
+.Preferred-Diet {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--heading-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.diet-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.diet-meals-preview {
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.diet-meals-preview h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+.diet-meals-preview ul {
+  padding: 0;
+}
+
+.diet-meals-preview li {
+  margin-bottom: 10px;
+}
+
+.diet-meals-preview a {
+  text-decoration: none;
+  color: var(--button-color);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.diet-meals-preview a:hover {
+  text-decoration: underline;
+}
+
+.diet-btn {
+  border: none;
+  background: #ffffff;
+  border-radius: 15px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(100px, 25vw, 120px);
+  height: clamp(110px, 30vw, 130px);
+  color: var(--text-color);
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+}
+
+.diet-btn img {
+  width: clamp(45px, 15vw, 55px);
+  height: clamp(45px, 15vw, 55px);
+  margin-bottom: 8px;
+  filter: brightness(1.1);
+}
+
+.diet-btn:hover {
+  background: var(--diet-btn-hover);
+  color: #000000;
+  transform: scale(1.08);
+  box-shadow: var(--shadow-dark);
+}
+
+.diet-btn.active {
+  background: var(--highlight-color);
+  color: var(--text-color);
+  border: 2px solid color-mix(in srgb, var(--highlight-color), #8a5c01);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: var(--shadow-dark);
+}
+
+.input-take {
+  margin: 1.5rem 0;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-take label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.input-take input,
+.input-take select {
+  background: #ffffff;
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
+  padding: 8px;
+  border-radius: 8px;
+  width: clamp(70px, 20vw, 80px);
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.input-take input:focus,
+.input-take select:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+}
+
+.input-take small a {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.btn-start {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--button-color);
+  display: block;
+  position: relative;
+  padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out, transform 0.3s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 1px 0 #FFE5C4, 0 2px 0 #915100;
+  border-radius: 45px;
+}
+
+.btn-start:hover {
+  background-color: var(--button-hover-color);
+}
+
+.btn-start:active {
+  top: 5px;
+  background-color: var(--button-hover-color);
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+}
+
+.button:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: -6px;
+  left: 0px;
+  z-index: -1;
+  background-color: #4a2c0295;
+  border-radius: 45px;
+}
+
+.macro-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  padding: 15px;
+  list-style: none;
+  background: rgba(94, 140, 97, 0.05);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.macro {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carbs {
+  color: #ffaa00;
+}
+
+.fats {
+  color: #5e8c61;
+}
+
+.protein {
+  color: #2e5c34;
+}
+
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.meal-container .btn {
+  margin-top: 20px;
+  padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 30px);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  border-radius: 25px;
+}
+
+#meal-plan-result {
+  margin-top: 2rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 16px;
+  color: #1a3c1f;
+  background: var(--background-color);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.9;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+#meal-plan-result h4 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: #5e8c61;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+#meal-plan-result p {
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  color: #2e5c34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(94, 140, 97, 0.2);
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+#meal-plan-result p:hover {
+  transform: translateX(10px);
+}
+
+#meal-plan-result p::before {
+  content: "🍽️";
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Added Styles for Meal Plan Links and Weight Maintenance Note */
+#meal-plan-result p a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+#meal-plan-result p a:hover {
+  color: var(--button-hover-color);
+  text-decoration: underline;
+}
+
+#meal-plan-result p.weight-maintenance {
+  font-style: italic;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #5e8c61;
+  background: rgba(94, 140, 97, 0.1);
+  border: none;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: block;
+}
+
+#meal-plan-result p.weight-maintenance::before {
+  content: "⚖️";
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Stat Section */
+.stat-section {
+  padding: clamp(40px, 10vw, 80px) 0;
+  background-color: var(--offerings-section);
+  box-shadow: 0px -1px 8px -5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.stat-section.section-visible {
+  opacity: 1;
+}
+
+.text-content {
+  padding-right: 20px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.Statistician-img {
+  width: 100%;
+  max-width: clamp(250px, 80%, 350px);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 45px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.Statistician-img:hover {
+  transform: scale(1.035);
+}
+
+.stat-section-buttons {
+  margin-top: 15px;
+}
+
+.description {
+  color: var(--text-color);
+  font-weight: 300;
+  text-align: left;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  font-size: clamp(0.9rem, 2.5vw, 18px);
+  margin: 8px;
+  color: var(--text-color);
+}
+
+.OUR-STORY {
+  background: var(--highlight-color);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0px 12px 8px -5px rgba(0, 0, 0, 0.1);
+}
+
+.OUR-STORY-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.OUR-STORY-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+/* Story CTA Section */
+.story-cta-section {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: clamp(20px, 5vw, 40px) 0;
+}
+
+.story-cta-section.section-visible {
+  opacity: 1;
+}
+
+.story-cta-section .lead {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Offering Section */
+.offerings-section {
+  background: #cedb1525;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: clamp(20px, 5vw, 40px) 0;
+}
+
+.offerings-section.section-visible {
+  opacity: 1;
+}
+
+.offering-card {
+  background: var(--gradient-basic);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
+  height: 100%;
+  max-width: clamp(250px, 90%, 300px);
+  border: 3px solid var(--highlight-color);
+  margin: 0 auto;
+}
+
+.offering-card.premium {
+  border: 3px solid var(--highlight-color);
+  position: relative;
+  background: var(--gradient-healthy);
+}
+
+.offering-card.premium:hover {
+  background: var(--gradient-healthy-hover);
+}
+
+.offering-card .badge {
+  position: absolute;
+  top: -1rem;
+  left: 45%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, var(--badge-color), #ff8a7a);
+  color: #fff;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  animation: float 3s infinite ease-in-out;
+}
+
+.offering-card h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.offering-card p.price-head {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.offering-card .price {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.offering-card .price span {
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  font-weight: 500;
+  color: #666666;
+  display: block;
+}
+
+.offering-card .price small {
+  font-size: clamp(0.5rem, 1.5vw, 0.6rem);
+  color: #666666;
+}
+
+.offering-card .get-started-btn {
+  background: linear-gradient(135deg, var(--button-color), #ffbb33);
+  color: var(--text-color);
+  border: none;
+  padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 170, 0, 0.2);
+}
+
+.offering-card .get-started-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: left 0.8s ease;
+}
+
+.offering-card .get-started-btn:hover::before {
+  left: 100%;
+}
+
+.offering-card .get-started-btn:hover {
+  background: linear-gradient(135deg, var(--button-hover-color), #d48800);
+  box-shadow: 0 6px 20px rgba(255, 170, 0, 0.3);
+}
+
+.offering-card .features {
+  text-align: left;
+  margin-top: auto;
+}
+
+.offering-card .features h4 {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #666666;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offering-card .features h4 span {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #666666;
+}
+
+.offering-card .features ul li {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.offering-card .features ul li::before {
+  content: "✓";
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.offering-card:hover {
+  background: linear-gradient(135deg, #e0f7e9, #f0f9f2, #ffffff);
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-dark);
+  border: 3px solid var(--highlight-color);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .main-img {
+    width: clamp(15rem, 50vw, 20rem);
+  }
+
+  .hero-text h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
+
+  .diet-btn-container {
+    gap: 10px;
+  }
+
+  .diet-btn {
+    width: clamp(90px, 20vw, 100px);
+    height: clamp(100px, 25vw, 110px);
+  }
+
+  .diet-btn img {
+    width: clamp(40px, 12vw, 50px);
+    height: clamp(40px, 12vw, 50px);
+  }
+
+  .input-take {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .input-take input,
+  .input-take select {
+    width: clamp(100px, 30vw, 120px);
+  }
+
+  .macro-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stat-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .Statistician-img {
+    max-width: clamp(200px, 60vw, 300px);
+  }
+}
+
+@media (max-width: 576px) {
+  .HSmarquee-wrapper {
+    height: 80px;
+  }
+
+  .HSmarquee-image {
+    height: 60px;
+  }
+
+  .meal-section {
+    padding: clamp(15px, 4vw, 20px);
+  }
+
+  .meal-container {
+    padding: clamp(15px, 4vw, 20px);
+  }
+
+  .Preferred-Diet {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .btn-start {
+    padding: clamp(10px, 2.5vw, 12px) clamp(15px, 4vw, 20px);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+
+  #meal-plan-result {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+
+  #meal-plan-result h4 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  }
+
+  .offering-card {
+    max-width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

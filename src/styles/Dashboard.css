@@ -1,0 +1,472 @@
+/* Dashboard.css */
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1)); /* Vertical overlay gradient */
+}
+
+/* Main Content */
+.dashboard-main-content {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background for overlay effect */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  padding: 30px;
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+/* Dashboard Greeting */
+.dashboard-greeting {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Meal Plan Section */
+.meal-plan-section {
+  margin-bottom: 40px;
+}
+
+.meal-plan-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meal-plan-section-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* Action Buttons (Create, Edit, Delete, Save, Cancel) */
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.action-button.create-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.action-button.create-button:hover {
+  background-color: #218838;
+}
+
+.action-button.edit-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.action-button.edit-button:hover {
+  background-color: #0056b3;
+}
+
+.action-button.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.action-button.delete-button:hover {
+  background-color: #c82333;
+}
+
+.action-button.save-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.action-button.save-button:hover {
+  background-color: #218838;
+}
+
+.action-button.cancel-button {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.action-button.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+.action-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.action-button svg {
+  margin-right: 5px;
+}
+
+/* Date Picker */
+.date-picker-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.date-picker {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.date-picker:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Meal Plan Table */
+.meal-plan-table {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent content from wrapping */
+}
+
+.meal-plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.meal-plan-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #007bff;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.refresh-button:hover {
+  color: #0056b3;
+}
+
+.refresh-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Meal Plan Controls (Edit/Delete Buttons) */
+.meal-plan-controls {
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+/* Meal Plan Day */
+.meal-plan-day {
+  display: inline-block; /* Allow days to sit inline for horizontal scrolling */
+  width: 300px; /* Fixed width to trigger horizontal scrolling */
+  margin-right: 15px; /* Space between days */
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  vertical-align: top; /* Align cards at the top */
+}
+
+.meal-plan-day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #e9ecef;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.meal-plan-day-header:hover {
+  background-color: #dee2e6;
+}
+
+.meal-plan-day-header h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.toggle-icon {
+  font-size: 1rem;
+  color: #666;
+}
+
+.meal-plan-details {
+  padding: 15px;
+  background-color: #fff;
+  white-space: normal; /* Allow text to wrap inside details */
+}
+
+.meal-plan-details p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.meal-plan-details strong {
+  color: #333;
+}
+
+/* Completion Label */
+.completion-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-left: 10px;
+}
+
+.completion-label input {
+  margin-right: 5px;
+}
+
+.completion-label input:disabled {
+  cursor: not-allowed;
+}
+
+/* Edit Controls (Save/Cancel Buttons) */
+.edit-controls {
+  margin-top: 20px;
+  text-align: right;
+}
+
+/* Messages */
+.loading-message {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+}
+
+.error-message {
+  font-size: 1rem;
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.no-plan-message {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Yoga and Exercise Containers */
+.meal-plan-table.yoga-scroll-container,
+.meal-plan-table.exercise-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+/* Yoga and Exercise Cards */
+.yoga-scroll-container .yoga-pose-card,
+.exercise-scroll-container .ExerciseList-card {
+  flex: 0 0 auto;
+  width: 250px; /* Match yoga card width */
+  position: relative; /* For positioning the remove button */
+}
+
+/* Yoga and Exercise Content */
+.yoga-pose-content,
+.exercise-content {
+  cursor: pointer;
+}
+
+/* Remove Button Styling for Yoga and Exercise */
+.yoga-remove-button,
+.exercise-remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  color: #ff4d4f;
+  transition: background 0.3s ease;
+}
+
+.yoga-remove-button:hover,
+.exercise-remove-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.yoga-remove-button svg,
+.exercise-remove-button svg {
+  font-size: 1.2rem;
+}
+
+.login-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+.meal-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.meal-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .dashboard-main-content {
+    padding: 20px;
+  }
+
+  .dashboard-greeting {
+    font-size: 2rem;
+  }
+
+  .meal-plan-section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .action-button {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+
+  .date-picker-label {
+    font-size: 1rem;
+  }
+
+  .date-picker {
+    padding: 6px;
+    font-size: 0.95rem;
+  }
+
+  .meal-plan-table {
+    padding: 15px;
+  }
+
+  .meal-plan-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .meal-plan-day {
+    width: 250px; /* Slightly smaller width for smaller screens */
+    margin-right: 10px;
+  }
+
+  .meal-plan-day-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .meal-plan-details p {
+    font-size: 0.95rem;
+  }
+
+  .completion-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-greeting {
+    font-size: 1.8rem;
+  }
+
+  .meal-plan-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meal-plan-section-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .action-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .date-picker-label {
+    font-size: 0.95rem;
+  }
+
+  .date-picker {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .meal-plan-controls,
+  .edit-controls {
+    text-align: center;
+  }
+
+  .action-button.edit-button,
+  .action-button.save-button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .meal-plan-day {
+    width: 200px; /* Smaller width for mobile */
+    margin-right: 8px;
+  }
+}

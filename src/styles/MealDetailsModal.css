@@ -1,0 +1,145 @@
+/* MealDetailsModal.css */
+.meal-details-modal-content {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.meal-details-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal-details-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+/* Image Container */
+.meal-details-image-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.meal-details-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px; /* Limit image height to prevent overflow */
+  object-fit: cover; /* Ensure image scales nicely */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal-details-image-fallback {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+}
+
+.meal-details-info {
+  margin-bottom: 20px;
+}
+
+.meal-details-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.meal-details-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meal-details-item {
+  font-size: 1rem;
+  color: #444;
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.meal-details-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+.meal-details-item.meal-details-empty {
+  font-style: italic;
+  color: #888;
+}
+
+.meal-details-text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.meal-planner-button.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.meal-planner-button.btn:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .meal-details-modal-content {
+    padding: 15px;
+  }
+
+  .meal-details-section {
+    padding: 10px;
+  }
+
+  .meal-details-title {
+    font-size: 1.3rem;
+  }
+
+  .meal-details-image {
+    max-height: 150px; /* Smaller image height on mobile */
+  }
+
+  .meal-details-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .meal-details-item,
+  .meal-details-text {
+    font-size: 0.95rem;
+  }
+
+  .meal-planner-button.btn {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+}

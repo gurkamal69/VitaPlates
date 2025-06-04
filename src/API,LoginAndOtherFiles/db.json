@@ -1,0 +1,18 @@
+{
+  "poses": [
+    {
+      "english_name": "Downward Dog",
+      "sanskrit_name": "Adho Mukha Svanasana",
+      "url_png": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Adho_mukha_svanasana_2.jpg",
+      "level": "Beginner",
+      "description": "A full-body stretch pose that calms the mind and strengthens the arms and legs."
+    },
+    {
+      "english_name": "Tree Pose",
+      "sanskrit_name": "Vrikshasana",
+      "url_png": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Tree_Pose_Yoga.jpg",
+      "level": "Intermediate",
+      "description": "Improves balance and strengthens the legs and core."
+    }
+  ]
+}
