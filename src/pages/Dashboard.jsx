@@ -172,9 +172,11 @@ const Dashboard = () => {
   const MealPlanTable = ({ mealPlanType, date, mealPlans, setMealPlans }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [retryCount, setRetryCount] = useState(0);
+    const maxRetries = 3;
 
     const fetchMealPlans = async () => {
-      if (!currentUser) {
+      if (!currentUser || !currentUser.email) {
         setError('Please log in to view meal plans.');
         return;
       }
@@ -189,8 +191,13 @@ const Dashboard = () => {
       try {
         const response = await axios.get(
           `http://localhost:5000/api/mealplan/${mealPlanType}/${date}`,
-          { params: { email: currentUser.email } }
+          { 
+            params: { email: currentUser.email },
+            timeout: 5000 // Add a timeout to prevent hanging
+          }
         );
+
+        console.log(`Fetched ${mealPlanType} meal plans for ${date}:`, response.data);
 
         const filteredPlans = response.data.filter(plan =>
           plan.breakfast !== 'No breakfast planned' ||
@@ -209,25 +216,40 @@ const Dashboard = () => {
             return JSON.stringify(newExpandedDays) !== JSON.stringify(prev) ? newExpandedDays : prev;
           });
         }
+        setRetryCount(0); // Reset retry count on success
       } catch (error) {
         console.error(`Error fetching ${mealPlanType} meal plans:`, {
           message: error.message,
           code: error.code,
-          response: error.response,
+          response: error.response?.data,
+          status: error.response?.status,
         });
         if (error.code === 'ECONNREFUSED') {
           setError('Cannot connect to the server. Please ensure the backend server is running on port 5000.');
+        } else if (error.response?.status === 404) {
+          setError('No meal plans found for this date.');
         } else {
-          setError('Failed to fetch meal plans. Please try again later.');
+          setError(`Failed to fetch meal plans: ${error.message}. Please try again later.`);
+        }
+
+        // Retry mechanism
+        if (retryCount < maxRetries) {
+          console.log(`Retrying fetch (${retryCount + 1}/${maxRetries})...`);
+          setTimeout(() => {
+            setRetryCount(prev => prev + 1);
+            fetchMealPlans();
+          }, 2000); // Retry after 2 seconds
         }
       } finally {
-        setLoading(false);
+        if (retryCount >= maxRetries || !error) {
+          setLoading(false);
+        }
       }
     };
 
     useEffect(() => {
       console.log('useEffect triggered with:', { mealPlanType, date, currentUserEmail: userEmail });
-      if (currentUser) {
+      if (currentUser && currentUser.email) {
         fetchMealPlans();
       }
     }, [mealPlanType, date, userEmail]);
@@ -272,7 +294,7 @@ const Dashboard = () => {
     };
 
     const handleSaveEdit = async () => {
-      if (!currentUser) {
+      if (!currentUser || !currentUser.email) {
         setError('Please log in to save changes.');
         return;
       }
@@ -366,7 +388,7 @@ const Dashboard = () => {
     };
 
     const handleToggleComplete = async (dayNumber, mealType) => {
-      if (!currentUser) {
+      if (!currentUser || !currentUser.email) {
         setError('Please log in to update meal completion.');
         return;
       }
@@ -439,6 +461,7 @@ const Dashboard = () => {
 
     const handleRefresh = () => {
       setMealPlans([]);
+      setRetryCount(0);
       fetchMealPlans();
     };
 
