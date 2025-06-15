@@ -9,17 +9,20 @@ const MealTable = ({ mealData, onAddMeal, onViewMeal, onRemoveMeal }) => {
 
   console.log('MealTable mealData:', mealData);
 
-  if (!mealData || !mealData.length || !mealData[0]) {
+  // Validate mealData structure
+  if (!mealData || !Array.isArray(mealData) || mealData.length === 0 || !Array.isArray(mealData[0])) {
     console.warn('Invalid mealData: returning fallback UI');
-    return <div>No meal data available. Please provide valid meal data.</div>;
+    return <div>No meal data available. Please provide valid meal data or wait for the data to load.</div>;
   }
+
+  const numCols = mealData[0].length;
 
   return (
     <table className="meal-planner-table">
       <thead>
         <tr>
           <th>DAYS</th>
-          {mealData[0].map((_, colIndex) => (
+          {Array.from({ length: numCols }).map((_, colIndex) => (
             <th key={colIndex}>
               {colIndex < defaultColLabels.length ? defaultColLabels[colIndex] : `Day ${colIndex + 1}`}
             </th>
@@ -34,7 +37,7 @@ const MealTable = ({ mealData, onAddMeal, onViewMeal, onRemoveMeal }) => {
             </th>
             {row.map((meals, colIndex) => (
               <td key={colIndex}>
-                {meals.length > 0 ? (
+                {Array.isArray(meals) && meals.length > 0 ? (
                   <div className="meal-planner-table-cell-content">
                     {meals.map((meal, mealIndex) => (
                       <div
@@ -52,22 +55,22 @@ const MealTable = ({ mealData, onAddMeal, onViewMeal, onRemoveMeal }) => {
                             onViewMeal(rowIndex, colIndex);
                           }
                         }}
-                        aria-label={`View details for ${meal.name || 'meal'}`}
+                        aria-label={`View details for ${meal?.name || 'meal'}`}
                       >
                         <img
-                          src={meal.image || FALLBACK_IMAGE}
-                          alt={meal.name || 'Meal'}
+                          src={meal?.image || FALLBACK_IMAGE}
+                          alt={meal?.name || 'Meal'}
                           className="meal-image"
                           onError={(e) => {
-                            console.warn(`Image failed to load for meal: ${meal.name || 'unknown'}, using fallback`);
-                            console.warn(`Failed URL: ${meal.image}`);
+                            console.warn(`Image failed to load for meal: ${meal?.name || 'unknown'}, using fallback`);
+                            console.warn(`Failed URL: ${meal?.image}`);
                             e.target.src = FALLBACK_IMAGE;
                           }}
                         />
                         <span className="meal-planner-table-cell-text">
-                          {(meal.name || 'Unnamed Meal').length > 20
-                            ? `${(meal.name || 'Unnamed Meal').slice(0, 20)}...`
-                            : meal.name || 'Unnamed Meal'}
+                          {(meal?.name || 'Unnamed Meal').length > 20
+                            ? `${(meal?.name || 'Unnamed Meal').slice(0, 20)}...`
+                            : meal?.name || 'Unnamed Meal'}
                         </span>
                         <button
                           className="meal-planner-table-remove-icon"
@@ -76,25 +79,27 @@ const MealTable = ({ mealData, onAddMeal, onViewMeal, onRemoveMeal }) => {
                             console.log(`Remove meal clicked for cell (${rowIndex}, ${colIndex}), mealIndex: ${mealIndex}`);
                             onRemoveMeal(rowIndex, colIndex, mealIndex);
                           }}
-                          title={`Remove ${meal.name || 'meal'}`}
-                          aria-label={`Remove ${meal.name || 'meal'}`}
+                          title={`Remove ${meal?.name || 'meal'}`}
+                          aria-label={`Remove ${meal?.name || 'meal'}`}
                         >
                           🗑️
                         </button>
                       </div>
                     ))}
-                    <button
-                      className="meal-planner-table-add-icon"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        console.log(`Add meal clicked for cell (${rowIndex}, ${colIndex})`);
-                        onAddMeal(rowIndex, colIndex);
-                      }}
-                      title="Add Another Meal"
-                      aria-label="Add another meal"
-                    >
-                      📝
-                    </button>
+                    {meals.length < MAX_MEALS_PER_CELL && (
+                      <button
+                        className="meal-planner-table-add-icon"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          console.log(`Add meal clicked for cell (${rowIndex}, ${colIndex})`);
+                          onAddMeal(rowIndex, colIndex);
+                        }}
+                        title="Add Another Meal"
+                        aria-label="Add another meal"
+                      >
+                        📝
+                      </button>
+                    )}
                   </div>
                 ) : (
                   <button
@@ -137,6 +142,10 @@ MealTable.propTypes = {
   onAddMeal: PropTypes.func.isRequired,
   onViewMeal: PropTypes.func.isRequired,
   onRemoveMeal: PropTypes.func.isRequired,
+};
+
+MealTable.defaultProps = {
+  mealData: [],
 };
 
 export default MealTable;
