@@ -351,7 +351,7 @@ const Home = () => {
                 </li>
               </ul>
               <div className="stat-section-buttons">
-                <Link to="/meal-planner" className="get-started btn" aria-label="Get started with meal planning">
+                <Link to="/meal-planner" className="btn" aria-label="Get started with meal planning">
                   🚀 GET STARTED
                 </Link>
               </div>
