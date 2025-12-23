@@ -39,7 +39,7 @@ In the project directory, you can run:
 
 ### `npm start`
 Runs the app in development mode.  
-Open **VitaPlates](https://vita-plates-7cvu.vercel.app/)** to view it in the browser.
+Open **([VitaPlates](https://vita-plates-7cvu.vercel.app/))** to view it in the browser.
 
 The page reloads automatically when you make changes.
 
@@ -90,6 +90,7 @@ For deployment guides, visit: [Deployment](https://create-react-app.dev/docs/dep
 - Progressive Web App: [Making a progressive web app ](https://create-react-app.dev/docs/making-a-progressive-web-app/)
 
 - Build Troubleshooting: [Npm Run Build Fails To Minify ](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+
 
 
 
