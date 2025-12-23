@@ -39,7 +39,7 @@ In the project directory, you can run:
 
 ### `npm start`
 Runs the app in development mode.  
-Open **http://localhost:3000** to view it in the browser.
+Open **VitaPlates](https://vita-plates-7cvu.vercel.app/)** to view it in the browser.
 
 The page reloads automatically when you make changes.
 
@@ -71,30 +71,31 @@ Most projects **do NOT need to eject**.
 ## 📚 Learn More
 
 - Create React App Docs:  
-  https://facebook.github.io/create-react-app/docs/getting-started
+[  VitaPlates](https://create-react-app.dev/docs/getting-started/)
 
 - React Documentation:  
-  https://reactjs.org/
+  [React Dev](https://react.dev/learn)
 
 ---
 
 ## 🌍 Deployment
 
 For deployment guides, visit:  
-https://facebook.github.io/create-react-app/docs/deployment
+[Deployment](https://create-react-app.dev/docs/deployment/)
 
 ---
 
 ## 🧩 Additional Resources
 
 - Code Splitting:  
-  https://facebook.github.io/create-react-app/docs/code-splitting
-
+[ Code Splitting
+](https://create-react-app.dev/docs/code-splitting/)
 - Bundle Size Analysis:  
-  https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+  [Bundle Size](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 
 - Progressive Web App:  
-  https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
+[Making a progressive web app
+](https://create-react-app.dev/docs/making-a-progressive-web-app/)
 - Build Troubleshooting:  
-  https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Npm Run Build Fails To Minify
+](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
