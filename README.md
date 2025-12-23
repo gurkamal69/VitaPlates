@@ -70,7 +70,7 @@ Most projects **do NOT need to eject**.
 
 ## 📚 Learn More
 
-- Create React App Docs: [  VitaPlates](https://create-react-app.dev/docs/getting-started/)
+- Create React App Docs: [  React App Docs ](https://create-react-app.dev/docs/getting-started/)
 
 - React Documentation: [React Dev](https://react.dev/learn)
 
@@ -90,5 +90,6 @@ For deployment guides, visit: [Deployment](https://create-react-app.dev/docs/dep
 - Progressive Web App: [Making a progressive web app ](https://create-react-app.dev/docs/making-a-progressive-web-app/)
 
 - Build Troubleshooting: [Npm Run Build Fails To Minify ](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+
 
 
