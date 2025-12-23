@@ -70,29 +70,25 @@ Most projects **do NOT need to eject**.
 
 ## 📚 Learn More
 
-- Create React App Docs:  
-[  VitaPlates](https://create-react-app.dev/docs/getting-started/)
+- Create React App Docs: [  VitaPlates](https://create-react-app.dev/docs/getting-started/)
 
-- React Documentation:  
-  [React Dev](https://react.dev/learn)
+- React Documentation: [React Dev](https://react.dev/learn)
 
 ---
 
 ## 🌍 Deployment
 
-For deployment guides, visit:  
-[Deployment](https://create-react-app.dev/docs/deployment/)
+For deployment guides, visit: [Deployment](https://create-react-app.dev/docs/deployment/)
 
 ---
 
 ## 🧩 Additional Resources
 
-- Code Splitting:[ Code Splitting](https://create-react-app.dev/docs/code-splitting/)
+- Code Splitting: [ Code Splitting](https://create-react-app.dev/docs/code-splitting/)
 - Bundle Size Analysis: [Bundle Size](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 
-- Progressive Web App:  
-[Making a progressive web app ](https://create-react-app.dev/docs/making-a-progressive-web-app/)
+- Progressive Web App: [Making a progressive web app ](https://create-react-app.dev/docs/making-a-progressive-web-app/)
 
-- Build Troubleshooting:  
-[Npm Run Build Fails To Minify ](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+- Build Troubleshooting: [Npm Run Build Fails To Minify ](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+
 
