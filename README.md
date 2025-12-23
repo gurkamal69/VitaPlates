@@ -87,15 +87,12 @@ For deployment guides, visit:
 
 ## 🧩 Additional Resources
 
-- Code Splitting:  
-[ Code Splitting
-](https://create-react-app.dev/docs/code-splitting/)
-- Bundle Size Analysis:  
-  [Bundle Size](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
+- Code Splitting:[ Code Splitting](https://create-react-app.dev/docs/code-splitting/)
+- Bundle Size Analysis: [Bundle Size](https://create-react-app.dev/docs/analyzing-the-bundle-size/)
 
 - Progressive Web App:  
-[Making a progressive web app
-](https://create-react-app.dev/docs/making-a-progressive-web-app/)
+[Making a progressive web app ](https://create-react-app.dev/docs/making-a-progressive-web-app/)
+
 - Build Troubleshooting:  
-[Npm Run Build Fails To Minify
-](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+[Npm Run Build Fails To Minify ](https://create-react-app.dev/docs/troubleshooting/#npm-run-build-fails-to-minify)
+
